@@ -14,5 +14,5 @@ Hello everyone to my first rice. This is my first time ricing so I'm inexeperien
 ## Terminal Screensavers GONE CRAZZY!!
 ![screensavers](https://github.com/Myusuki/Reverie-Miku-at-Night/blob/main/Miku%20Bspwm%20Images/terminal-screensaver-frenzy.png?raw=true)
 
-##Vim
+## Vim
 ![Vim](https://github.com/Myusuki/Reverie-Miku-at-Night/blob/main/Miku%20Bspwm%20Images/vim.png?raw=true)
