@@ -9,4 +9,10 @@ Hello everyone to my first rice. This is my first time ricing so I'm inexeperien
 
 ## Rofi and Rofi powermenu: 
 ![rofi](https://github.com/Myusuki/Reverie-Miku-at-Night/blob/main/Miku%20Bspwm%20Images/rofi.png?raw=true)
-![rofipowermenu](https://github.com/Myusuki/Reverie-Miku-at-Night/blob/main/Miku%20Bspwm%20Images/rofi.png?raw=true)
+![rofipowermenu](https://github.com/Myusuki/Reverie-Miku-at-Night/blob/main/Miku%20Bspwm%20Images/rofi-power-menu.png?raw=true)
+
+## Terminal Screensavers GONE CRAZZY!!
+![screensavers](https://github.com/Myusuki/Reverie-Miku-at-Night/blob/main/Miku%20Bspwm%20Images/terminal-screensaver-frenzy.png?raw=true)
+
+##Vim
+![Vim](https://github.com/Myusuki/Reverie-Miku-at-Night/blob/main/Miku%20Bspwm%20Images/vim.png?raw=true)
