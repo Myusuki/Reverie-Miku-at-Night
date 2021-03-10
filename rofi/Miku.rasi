@@ -42,7 +42,7 @@ mainbox{
 	background-color: @background;
 	border:  0;
 	padding: 0;
-	children: [listview, mode-switcher, inputbar];
+	children: [listview, inputbar];
 }
 
 listview{
