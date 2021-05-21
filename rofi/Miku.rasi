@@ -39,8 +39,18 @@ element.selected.active{
 	text-color: @selected-foreground;
 }
 
+element.selected.inactive{
+	background-color: @selected-background;
+	border-radius: 4;
+	text-color: @selected-foreground;
+}
 
 element.alternate.normal{
+	background-color: @background;
+	text-color: @foreground;
+}
+
+element.alternate.active{
 	background-color: @background;
 	text-color: @foreground;
 }
@@ -99,6 +109,7 @@ textbox-prompt-colon{
 	margin: 0px 0.3em 0em 0em;
 	border-radius: 0 4 4 0;
 	background-color: @run-background;
+	padding : 1;
 	text-color: @foreground;
 }
 
