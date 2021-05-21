@@ -33,6 +33,13 @@ element.selected.normal{
 	text-color: @selected-foreground;
 }
 
+element.selected.active{
+	background-color: @selected-background;
+	border-radius: 4;
+	text-color: @selected-foreground;
+}
+
+
 element.alternate.normal{
 	background-color: @background;
 	text-color: @foreground;
