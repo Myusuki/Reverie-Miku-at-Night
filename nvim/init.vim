@@ -3,6 +3,13 @@ set nu
 set splitbelow splitright
 set laststatus =2
 set noshowmode
+set wrap linebreak nolist
+
+map y <Left>
+map j <Up>
+map f <Right>
+map n <Down>
+
 
 let g:lightline = {
 	\'colorscheme' : 'Miku',
@@ -23,4 +30,5 @@ Plug 'ap/vim-css-color'
 Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/goyo.vim'
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 call plug#end()
