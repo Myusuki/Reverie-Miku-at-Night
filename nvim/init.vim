@@ -5,11 +5,6 @@ set laststatus =2
 set noshowmode
 set wrap linebreak nolist
 
-map y <Left>
-map j <Up>
-map f <Right>
-map n <Down>
-
 
 let g:lightline = {
 	\'colorscheme' : 'Miku',
