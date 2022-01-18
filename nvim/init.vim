@@ -1,10 +1,14 @@
-set clipboard =unnamed
+set clipboard=unnamed
 set nu
 set splitbelow splitright
 set laststatus =2
 set noshowmode
 set wrap linebreak nolist
 set showtabline =2
+syntax on
+set hlsearch 
+set tabstop=4
+set autoindent
 
 " lead key 
 let mapleader = "`"
@@ -18,6 +22,7 @@ Plug 'ap/vim-css-color'
 " tools
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 " autocompletion
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
@@ -46,6 +51,10 @@ let g:lightline.enable = {
 			\ 'statusline' : 1,
 			\ 'tabline' : 1
 			\}
+
+" Indent Blankline
+let g:indent_blankline_show_current_context = v:true
+let g:indent_blankline_show_current_context_start = v:true
 
 " ncm2
 autocmd BufEnter * call ncm2#enable_for_buffer() " enable ncm2 for all buffers
