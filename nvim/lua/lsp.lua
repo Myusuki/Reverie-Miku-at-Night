@@ -1,16 +1,63 @@
+local status_ok, lsp = pcall(require, "lspconfig")
+if not status_ok then 
+  return
+end
 
+
+-- lspconfig
 local bmap = vim.api.nvim_buf_set_keymap
 local opts = {noremap = true, silent = true}
-bmap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-bmap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-bmap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-bmap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-bmap(bufnr, 'n', 'K', '<cmd>lua vim.lps.buf.hover()<CR>', opts)
-bmap(bufnr, 'n', '<C-l>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-bmap(bufnr, 'n', '<C-f>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-bmap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+local on_attach = function(bufnr)
+  -- lspconfig mappings
+  bmap(bufnr, 'n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  -- lspsaga mappings
+  bmap(bufnr, 'n', 'K', '<cmd>Lspsaga hover_doc<cr>', opts)
+  bmap(bufnr, 'n', '<C-k>', '<cmd>Lspsaga signature_help<cr>', opts)
+  bmap(bufnr, 'n', 'rn','<cmd>Lspsaga rename<cr>', opts)
+  bmap(bufnr, 'n', 'gd', '<cmd>Lspsaga preview_definition<cr>', opts)
+  bmap(bufnr, 'n', 'dn', '<cmd>Lspsaga diagnostic_jump_next<cr>', opts)
+  bmap(bufnr, 'n', 'de', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opts)
+  bmap(bufnr, 'n', 'ca', '<cmd>Lspsaga code_action<cr>', opts)
+end
 
-local lsp_installer = require "nvim-lsp-installer"
+-- clangd
+require'lspconfig'.clangd.setup{
+  on_attach = on_attach,
+  cmd = {"clangd"},
+}
+
+-- lua
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+require'lspconfig'.sumneko_lua.setup {
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = runtime_path,
+      },
+      diagnostics = {
+        globals = {'vim'},
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+
+-- lsp-installer
+local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+if not status_ok then
+  return
+end
 
 local servers = {
 	"bashls",
