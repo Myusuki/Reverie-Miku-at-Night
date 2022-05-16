@@ -20,18 +20,17 @@ vim.g.mapleader = '`'
 -- leader hotkey functions
 local options = {noremap = true}
 map('n', '<leader>so', ':so $MYVIMRC<cr>', options)
-map('n', '<leader>wk', ':WhichKey<cr>', options)
 map('n', '<leader>ps', ':PackerSync<cr>', options)
 map('n', '<leader>pc', ':PackerClean<cr>', options)
--- map('n', '<leader>ls', ':LspStart<cr>', options)
--- map('n', '<leader>li', ':LspInstallInfo<cr>', options)
+map('n', '<leader>ls', ':LspStart<cr>', options)
+map('n', '<leader>li', ':LspInstallInfo<cr>', options)
 map('n', '<leader>z', ':TZAtaraxis<cr>', options)
 
 require('statline')
 require('TrueZen')
 require('indentline')
 require('treesit')
-require('wk')
+require('nvim-cmp')
 
 local status_ok, packer = pcall( require, 'packer')
 if not status_ok then
@@ -42,21 +41,33 @@ vim.cmd [[ packadd packer.nvim ]]
 
 return packer.startup( function()
 
-  -- Packer
+    -- Packer
   use 'wbthomason/packer.nvim'
+  -- Lsp
+  use 'neovim/nvim-lspconfig'
+  use 'tami5/lspsaga.nvim'
+  use 'williamboman/nvim-lsp-installer'
+  -- nvim-cmp
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'dcampos/nvim-snippy'
+  use 'dcampos/cmp-snippy' 
+  use 'honza/vim-snippets'
   -- TrueZen
   use "Pocco81/TrueZen.nvim"
   -- indentline
   use 'lukas-reineke/indent-blankline.nvim'
   -- Lush
   use 'rktjmp/lush.nvim'
-  use '~/gitdownloads/Miku_lush'
+  use '$HOME/gitdownloads/Miku_lush'
   -- Lualine
-  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  use 'nvim-lualine/lualine.nvim'
+  use 'kyazdani42/nvim-web-devicons'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'lewis6991/spellsitter.nvim', }
-  -- which-keys
-  use { "folke/which-key.nvim" }
 
 end )
