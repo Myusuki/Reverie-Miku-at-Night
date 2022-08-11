@@ -1,14 +1,22 @@
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
 require( "catppuccin" ).setup( {
-	transparent_background = true,
+	dim_inactive = {
+		enabled = false,
+		shade = "dark",
+		percentage = 0.15,
+	},
+	transparent_background = false,
+	term_colors = false,
+	compile = {
+		enabled = false,
+		path = vim.fn.stdpath "cache" .. "/catppuccin",
+	},
 	styles = {
 		comments = { "italic" },
-		functions = { "italic" },
+		functions = { "undercurl" },
+		types = { "bold" },
 	},
 	integrations = {
-		indent_blankline = { enabled = true, colored_indent_levels = false },
-		gitsigns = true,
 		treesitter = true,
 		native_lsp = {
 			enabled = true,
@@ -25,10 +33,13 @@ require( "catppuccin" ).setup( {
 				information = { "underline" },
 			},
 		},
-		lsp_saga = true,
+		cmp = true,
+		lsp_saga = false,
+		gitsigns = true,
 		telescope = true,
-		cmp = true
+		beacon = true,
 	},
 } )
 
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 vim.cmd [[colorscheme catppuccin]]
