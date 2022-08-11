@@ -1,16 +1,7 @@
 
 require( "catppuccin" ).setup( {
-	dim_inactive = {
-		enabled = false,
-		shade = "dark",
-		percentage = 0.15,
-	},
 	transparent_background = false,
-	term_colors = false,
-	compile = {
-		enabled = false,
-		path = vim.fn.stdpath "cache" .. "/catppuccin",
-	},
+	term_colors = true,
 	styles = {
 		comments = { "italic" },
 		functions = { "undercurl" },
