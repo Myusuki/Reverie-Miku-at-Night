@@ -22,6 +22,7 @@ packer.startup( function( use )
 	-- snippet
 	use 'dcampos/nvim-snippy'
 	use 'dcampos/cmp-snippy'
+	use 'honza/vim-snippets'
 	-- treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	-- autopair
@@ -42,6 +43,11 @@ packer.startup( function( use )
 	use 'nvim-lualine/lualine.nvim'
 	-- beacon nvim 
 	use 'rainbowhxch/beacon.nvim'
+	-- markdown 
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
 end )
 
 require( 'pluginConfs.catppuccinRC' )

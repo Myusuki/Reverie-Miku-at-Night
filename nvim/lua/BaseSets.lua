@@ -8,9 +8,9 @@ vim.o.clipboard = 'unnamedplus'
 -- cmd height
 vim.opt.cmdheight = 1
 -- file encoding
-vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
-vim.scriptencoding = 'utf-8'
+vim.opt.encoding = 'utf-8', 'big-5', 'big5hkscs', 'gb18030', 'gb2312', 'gbk', 'euctw'
+vim.opt.fileencoding = 'utf-8', 'big-5', 'big5hkscs', 'gb18030', 'gb2312', 'gbk', 'euctw'
+vim.scriptencoding = 'utf-8', 'big-5', 'big5hkscs', 'gb18030', 'gb2312', 'gbk', 'euctw'
 -- file title
 vim.opt.title = true
 -- highlighting
@@ -18,7 +18,7 @@ vim.opt.background = 'dark'
 vim.opt.cursorline = true
 vim.o.hlsearch = true
 vim.bo.syntax = 'ON'
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 vim.opt.wildoptions = 'pum'
 -- inccommand
 vim.opt.inccommand = split
@@ -47,4 +47,3 @@ vim.wo.wrap = true
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
-
