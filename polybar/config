@@ -28,8 +28,8 @@ module-margin-right = 0
 font-0              = Hermit:size=11;4
 font-1              = Noto Sans CJK sc:pixelsize=12;3
 
-modules-left        = bat cpu memory pulseaudio tab
-modules-center      = time date eth wlan
+modules-left        = bat cpu memory 
+modules-center      = time date wlan
 modules-right       = bspwm
 
 
@@ -184,58 +184,6 @@ label-padding 		 = 1
 label-foreground 	 = ${colors.color0}
 label-background 	 = ${colors.color7}
 
-[module/pulseaudio]
-type 				= internal/pulseaudio
-sink 				= 
-use-ui-max 			= true
-interval 			= 1
-
-format-volume 			= <label-volume>
-format-volume-foreground 	= ${colors.color0}
-format-volume-background 	= ${colors.color7}
-
-format-volume-prefix 		= 音: 
-format-volume-prefix-padding    = 1
-format-volume-prefix-background = ${colors.color6}
-
-label-volume 			= %percentage%%
-label-volume-padding 		= 1
-
-label-muted 			= 静音
-label-muted-padding 		= 1
-label-muted-foreground 		= ${colors.color0}
-label-muted-background 		= ${colors.color6}
-
-
-
-[module/tab]
-type = internal/xwindow
-
-format = <label>
-
-label 		 = %title%
-label-maxlen 	 = 20
-label-padding    = 1
-label-foreground = ${colors.color6}
-label-background = ${colors.color0}
-
-
-
-[module/eth]
-type = internal/network
-interface = eno1
-interval = 3.0
-format-connected-background  = ${colors.background}
-format-connected-foreground  = ${colors.foreground}
-format-connected-padding = 1
-format-connected = %{A1:$HOME/.../rofi-network-manager/rofi-network-manager.sh:}<label-connected>%{A}
-label-connected =  %local_ip%
-format-disconnected-background  = ${colors.background}
-format-disconnected-foreground = ${colors.foreground-alt}
-format-disconnected-padding = 1
-format-disconnected = %{A1:$HOME/.../rofi-network-manager/rofi-network-manager.sh:}<label-disconnected>%{A}
-label-disconnected ="󰌺"
-
 
 
 [module/wlan]
@@ -243,39 +191,29 @@ type = internal/network
 interface = wlo1
 interval = 3.0
 unknown-as-up = true
+format-connected-prefix-background = ${colors.color2}
+format-connected-prefix-foreground = ${colors.color0}
+format-connected-prefix-padding = 1
+format-connected-prefix = 网
 format-connected-background  = ${colors.color7}
 format-connected-foreground  = ${colors.color0}
-format-connected-padding = 1
-format-connected = %{A1:$HOME/.../rofi-network-manager/rofi-network-manager.sh:}<label-connected> <ramp-signal>%{A}
+format-connected-padding = 1 
+format-connected = <label-connected> <ramp-signal>
 label-connected = %essid%
+format-disconnected-prefix-background = ${colors.color2}
+format-disconnected-prefix-foreground = ${colors.color0}
+format-disconnected-prefix-padding = 1
+format-disconnected-prefix = 下网
 format-disconnected-background  = ${colors.background}
 format-disconnected-foreground = ${colors.foreground}
 format-disconnected-padding = 1
-format-disconnected = %{A1:$HOME/.../rofi-network-manager/rofi-network-manager.sh:}<label-disconnected>%{A}
+format-disconnected = <label-disconnected>
 label-disconnected =""
 ramp-signal-0 = "0"
 ramp-signal-1 = "1"
 ramp-signal-2 = "2"
 ramp-signal-3 = "3"
 ramp-signal-4 = "4"
-click-left = kitty sh -c "/home/myu/gitdownloads/rofi-network-manager/rofi-network-manager.sh"
-
-
-
-;[module/xkeyboard]
-;type 			   = internal/xkeyboard
-;lacklist-0 		   = num lock
-
-;label-layout 		   = %layout%
-
-;label-indicator-padding    = 0
-;label-indicator-margin     = 0
-;label-indicator-background = ${colors.color1}
-;label-inidicator-underline = ${colors.color1}
-
-;format-padding 		   = 1
-;format-foreground 	   = ${colors.color0}
-;format-background 	   = ${colors.color1}
 
 
 

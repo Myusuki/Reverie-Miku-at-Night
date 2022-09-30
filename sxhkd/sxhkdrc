@@ -1,125 +1,127 @@
-#
-# wm independent hotkeys
-#
-
-# terminal emulator
+# Terminal Emulator
 super + Return
 	kitty
 
-# program launcher
+# Program Launcher
 super + @space
 	rofi -show drun -show-icons -font "Hermit Regular 16" -theme ~/.config/rofi/Miku.rasi -hide-scrollbar 
 
-# make sxhkd reload its configuration files:
+# reload sxhkd configuration files
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#rofi powermenu 
-super + q
-	rofi -show power-menu -modi power-menu:rofi-power-menu -font "Hermit Regular 16" -theme ~/.config/rofi/Miku.rasi
-
-#
 # bspwm hotkeys
-#
-
-# restart bspwm
+## restart bspwm
 super + {a}
 	bspc {wm -r}
 
-# close and kill
+## close and kill
 super + {_,shift + }w
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
+## alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
-# swap the current node and the biggest window
-super + {_,shift + } g
+## swap the current node and the biggest window
+super + shift + g
 	bspc node -s biggest.window
 
-#
-# state/flags
-#
 
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# set the node flags
-super + ctrl + {z,x,c,v}
-	bspc node -g {marked,locked,sticky,private}
 
-#
 # focus/swap
-#
+## focus the node in the given direction
+super + {Left, Down, Up, Right}
+	bspc node -f {west,south,north,east}
 
-# focus the node in the given direction
-super + {_,shift + }{Left,Down,Up,Right}
-	bspc node -{f,s} {west,south,north,east}
-
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous window in the current desktop
+## focus the next/previous window in the current desktop
 alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
+## focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
+## focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
-# focus or send to the given desktop
+## focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
 
-# preselect the direction
-super + ctrl + {h,j,k,l}
+# preselect
+## preselect the direction
+super + ctrl + {n,e,o,i}
 	bspc node -p {west,south,north,east}
 
-# preselect the ratio
+## preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
+## cancel the preselection for the focused node
 super + ctrl + space
 	bspc node -p cancel
 
-# cancel the preselection for the focused desktop
+## cancel the preselection for the focused desktop
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
 # move/resize
-#
-
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
+## expand a window by moving one of its side outward
+super + alt + {n,e,o,i}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,;}
+## contract a window by moving one of its side inward
+super + alt + shift + {n,e,o,i}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move a floating window
-super + {Left,Down,Up,Right}
+## move a floating window
+super + {n,e,o,i}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# volume control
+## volume increase
+super + F8
+	amixer set Master 2%+
+
+## volume descrease
+super + F7
+	amixer set Master 2%-
+
+## volume mute
+super + F6
+	amixer set Master toggle
+
+# brightness controls
+## brightness increase 
+super + F3
+	brightnessctl set 20+
+
+## brightness decrease
+super + F2
+	brightnessctl set 20-
+
+
+# send the newest marked node to the newest preselected node
+# super + y
+	# bspc node newest.marked.local -n newest.!automatic.local
+
+# set the node flags
+# super + ctrl + {z,x,c,v}
+	# bspc node -g {marked,locked,sticky,private}
+
+# focus the node for the given path jump
+# super + {p,b,comma,period}
+	# bspc node -f @{parent,brother,first,second}
+
+# focus the older or newer node in the focus history
+# super + {o,i}
+	# bspc wm -h off; \
+	# bspc node {older,newer} -f; \
+	# bspc wm -h on

@@ -40,8 +40,7 @@ cmp.setup( {
         fallback()
       end
     end, { "i", "s" }),
-		[ '<C-Space>' ] = cmp.mapping.complete(),
-		[ '<C-CR>' ] = cmp.mapping.close(),
+		[ '<C-Space>' ] = cmp.mapping.close(),
 		[ '<CR>' ] = cmp.mapping.confirm( {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true
