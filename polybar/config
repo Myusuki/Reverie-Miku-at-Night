@@ -188,7 +188,7 @@ label-background 	 = ${colors.color7}
 
 [module/wlan]
 type = internal/network
-interface = wlo1
+interface = wlan0
 interval = 3.0
 unknown-as-up = true
 format-connected-prefix-background = ${colors.color2}
