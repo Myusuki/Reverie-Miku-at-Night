@@ -14,6 +14,31 @@ fcitx -d &
 bspc monitor -d 一 二 三 四 五
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
+# Dual Monitor 
+if [[ $(xrandr -q | grep 'HDMI1 connected') ]]; then
+    xrandr --output eDP1 --primary --mode 1920x1080 --rotate normal --output HDMI1 --mode 1920x1080 --rotate normal --right-of eDP1
+    # Workspaces
+    bspc monitor HDMI1 -d V VI VII VIII
+else
+    xrandr --output HDMI1 --off
+    # Remove nodes
+    while bspc node @V: --kill; do
+        :
+    done
+    while bspc node @VI: --kill; do
+        :
+    done
+    while bspc node @VII: --kill; do
+        :
+    done
+    while bspc node @VIII: --kill; do
+        :
+    done
+    # Remove workspaces
+    bspc desktop -r V VI VII VIII
+    # Remove monitor
+    bspc monitor HDMI1 -r
+fi
 
 # Window
 bspc config automatic_scheme 	 alternate
