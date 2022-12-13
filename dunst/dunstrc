@@ -1,12 +1,11 @@
 [global]
 # notifs pop up in display where the mouse is 
-follow = mouse 
+follow = keyboard
 
 # geometry of the notif 
 width = (0,900)
 height = 900
 origin = top-center
-offset = 10x40
 
 # show number of msgs that are hidden due to geometry
 indicate_hidden = yes
@@ -18,7 +17,7 @@ shrink = no
 separator_height = 4
 
 # padding between txt and separator 
-padding = 16 
+padding = 10
 
 # horizontal padding 
 horizontal_padding = 8
@@ -91,13 +90,13 @@ icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/de
 sticky_history = yes
 
 # max amount of notifs kept in history 
-history_length = 30
+history_length = 50
 
 #dmenu path
 dmenu = /usr/bin/dmenu -p dunst:
 
 # browser path for open urls
-browser = /usr/bin /brave -new-tab
+browser = /usr/bin/brave-nightly -new-tab
 
 # always run rule-defined scripts, even if the notif is suppressed 
 always_run_script = true 
@@ -125,17 +124,16 @@ force_xinerama = false
 
 # mouse bindings 
 mouse_left_click = close_current
-mouse_middle_click = do_action, close_current
-mouse_right_click = close_all
+mouse_right_click = do_action
 
 [experimental]
-# calculate dip to use on a per-monitor basis 
-per_monitor_dpi = false 
+# calculate dpi to use on a per-monitor basis 
+per_monitor_dpi = true
 
 [shortcuts]
 
 # close notifs 
-close = ctrl+space
+close = alt+space
 
 # close all notifs 
 close_all = ctrl+shift+space
