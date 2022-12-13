@@ -88,15 +88,15 @@ super + {n,e,o,i}
 # volume control
 ## volume increase
 super + F8
-	amixer set Master 2%+
+	pamixer -i 2
 
 ## volume descrease
 super + F7
-	amixer set Master 2%-
+	pamixer -d 2
 
 ## volume mute
 super + F6
-	amixer set Master toggle
+	pamixer -t 
 
 # brightness controls
 ## brightness increase 
@@ -107,6 +107,14 @@ super + F3
 super + F2
 	brightnessctl set 20-
 
+# dunstify
+## scroll through history 
+ctrl + grave
+	dunstctl history-pop
+
+## close all notifs
+ctrl + shift + @space
+	dunstctl close-all
 
 # send the newest marked node to the newest preselected node
 # super + y
