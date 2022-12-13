@@ -6,6 +6,7 @@ follow = keyboard
 width = (0,900)
 height = 900
 origin = top-center
+offset = 10x40
 
 # show number of msgs that are hidden due to geometry
 indicate_hidden = yes
@@ -17,7 +18,7 @@ shrink = no
 separator_height = 4
 
 # padding between txt and separator 
-padding = 10
+padding = 16
 
 # horizontal padding 
 horizontal_padding = 8
@@ -107,12 +108,6 @@ title = Dunst
 # define class of windows spawned by dunst 
 class = Dunst
 
-# startup notif
-startup_notification = true 
-
-# manage dunst's desire for talking 
-verbosity = mesg
-
 # corner radius 
 corner_radius = 8 
 
@@ -128,21 +123,7 @@ mouse_right_click = do_action
 
 [experimental]
 # calculate dpi to use on a per-monitor basis 
-per_monitor_dpi = true
-
-[shortcuts]
-
-# close notifs 
-close = alt+space
-
-# close all notifs 
-close_all = ctrl+shift+space
-
-# redisplay last msg(s)
-history = ctrl+grave
-
-# context menu
-context = ctrl+shift+period
+per_monitor_dpi = false
 
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
