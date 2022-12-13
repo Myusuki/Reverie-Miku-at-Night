@@ -10,6 +10,8 @@ packer.startup( function( use )
 	use 'wbthomason/packer.nvim'
 	use { "catppuccin/nvim", as = "catppuccin" } -- theme 
 	-- LSP
+	use 'williamboman/mason.nvim'
+	use 'williamboman/mason-lspconfig.nvim'
 	use 'neovim/nvim-lspconfig'
 	use 'glepnir/lspsaga.nvim'
 	-- autocomplete
@@ -22,7 +24,6 @@ packer.startup( function( use )
 	-- snippet
 	use 'dcampos/nvim-snippy'
 	use 'dcampos/cmp-snippy'
-	use 'honza/vim-snippets'
 	-- treesitter
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	-- autopair
@@ -52,6 +53,7 @@ end )
 
 require( 'pluginConfs.catppuccinRC' )
 require( 'pluginConfs.lspconfigRC' )
+require( 'pluginConfs.masonRC' )
 require( 'pluginConfs.lspExtendedRC')
 require( 'pluginConfs.lspkindRC' )
 require( 'pluginConfs.nvimCmpRC' )

@@ -8,9 +8,9 @@ vim.o.clipboard = 'unnamedplus'
 -- cmd height
 vim.opt.cmdheight = 1
 -- file encoding
-vim.opt.encoding = 'utf-8', 'big-5', 'big5hkscs', 'gb18030', 'gb2312', 'gbk', 'euctw'
-vim.opt.fileencoding = 'utf-8', 'big-5', 'big5hkscs', 'gb18030', 'gb2312', 'gbk', 'euctw'
-vim.scriptencoding = 'utf-8', 'big-5', 'big5hkscs', 'gb18030', 'gb2312', 'gbk', 'euctw'
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencoding = 'utf-8'
+vim.scriptencoding = 'utf-8'
 -- file title
 vim.opt.title = true
 -- highlighting
@@ -21,7 +21,7 @@ vim.bo.syntax = 'ON'
 vim.opt.termguicolors = false
 vim.opt.wildoptions = 'pum'
 -- inccommand
-vim.opt.inccommand = split
+vim.opt.inccommand = 'split'
 -- indentation 
 vim.opt.autoindent = true
 vim.opt.breakindent = true

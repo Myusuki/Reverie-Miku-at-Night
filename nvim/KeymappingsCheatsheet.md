@@ -9,10 +9,9 @@
 - ctrl + d - scroll docs backwards
 - ctrl + f - scroll docs forwards 
 - tab - scroll forwards through popmenu
-- shift + tab - scroll backwards through popupmenu
-- ctrl + space - complete word
-- ctrl + enter - close popupmenu
-- enter - confirm and select option in popupmenu 
+- shift + tab - scroll backwards through popmenu
+- ctrl + space - close popmenu
+- enter - confirm popupmenu selection
 ### Lsp-config
 - \<leader\>ls - Start Lsp 
 ### Lsp Saga

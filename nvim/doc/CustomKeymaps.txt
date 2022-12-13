@@ -1,0 +1,43 @@
+*CustomKeymaps.txt* My Personal Keymaps.
+
+Custom Keymaps 	*CustomKeymaps*
+=================================================
+
+General Kemappings~
+<leader>so - source $MYVIMRC
+
+Plugin Specific Keymappings~
+================================================
+Packer.nvim~
+<leader>pi - Installs listed plugins
+<leader>pc - Removes unlisted plugins
+
+Nvim-cmp~
+ctrl+d - scroll docs backwards
+ctrl+f - scroll docs forwards
+tab - scroll forwards through popmenu
+shift+tab - scroll backwards through popmenu
+ctrl+space - close popmenu
+enter - confirm popmenu selection
+
+LSP-config~
+<leader>ls - start LSP 
+
+LSP Saga~
+*all are done in normal mode
+lj - jump to next diagnostic
+lh - hover doc
+lf - LSP finder
+ls - signature help
+lr - rename
+
+Telescope~
+*all are done in normal mode
+tf - find files
+  tfe - file browser
+tg - live grep
+tb - browse buffers
+tr - resume
+td - diagnostics
+
+vim:tw=78:ts=8:noet:ft=help:norl:
