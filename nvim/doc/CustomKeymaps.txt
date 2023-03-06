@@ -21,15 +21,20 @@ ctrl+space - close popmenu
 enter - confirm popmenu selection
 
 LSP-config~
-<leader>ls - start LSP 
-
-LSP Saga~
 *all are done in normal mode
-lj - jump to next diagnostic
-lh - hover doc
-lf - LSP finder
-ls - signature help
-lr - rename
+<leader>ls - start LSP 
+  Diagnostics~
+    <space>lt - go to next diagnostic 
+    <space>la - go to prev diagnostic
+    <space>lf - show diagnostics in a floating window
+  Function actions~
+    <space>lD - go to declaration
+    <space>ld - go to definition
+    <space>ls - show function signature
+  Code Actions~
+    <space>lh - show hover info
+    <space>lc - code actions 
+    <space>lr - rename function
 
 Telescope~
 *all are done in normal mode

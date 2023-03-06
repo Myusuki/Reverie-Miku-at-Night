@@ -12,5 +12,5 @@ ts.setup{
 		enable = true,
 		disable = {},
 	},
-	ensure_installed = { 'c', 'cpp', 'bash', 'lua' },
+	ensure_installed = { 'c', 'cpp', 'bash', 'lua', 'latex', 'markdown', 'make', 'help', 'java' },
 }

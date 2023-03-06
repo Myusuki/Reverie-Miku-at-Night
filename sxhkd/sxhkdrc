@@ -118,7 +118,7 @@ ctrl + shift + @space
 
 ## Expand Notic to check its ellipsed content
 super + period
-	dunstctl context 
+	dunstctl context
 
 # send the newest marked node to the newest preselected node
 # super + y

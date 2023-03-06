@@ -30,7 +30,7 @@ vim.opt.smartindent = true
 vim.bo.shiftwidth = 2
 vim.bo.tabstop = 2
 -- laststatus 
-vim.opt.laststatus = 2
+vim.opt.laststatus = 1
 -- numbered lines
 vim.wo.number = true
 -- pathfinding

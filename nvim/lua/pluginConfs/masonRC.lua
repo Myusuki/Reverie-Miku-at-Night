@@ -9,6 +9,6 @@ require( "mason" ).setup( {
 	},
 } )
 require( "mason-lspconfig" ).setup( {
-	ensure_installed = { "sumneko_lua", "clangd" },
+	ensure_installed = { "lua_ls", "clangd" },
 	automatic_installation = true;
 } )

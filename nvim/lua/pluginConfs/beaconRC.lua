@@ -6,10 +6,13 @@ end
 beacon.setup( {
 	enable = true,
 	size = 100,
-	fade = true,
-	minimal_jump = 8,
+	fade = false,
+	minimal_jump = 5,
 	show_jumps = true,
-	focus_gained = true,
+	focus_gained = false,
 	shrink = true,
-	timeout = 500,
+	timeout = 300,
+	ignore_buffers = {},
+	ignore_filetypes = {},
 } )
+

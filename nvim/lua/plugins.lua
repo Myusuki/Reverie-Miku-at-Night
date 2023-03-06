@@ -13,7 +13,6 @@ packer.startup( function( use )
 	use 'williamboman/mason.nvim'
 	use 'williamboman/mason-lspconfig.nvim'
 	use 'neovim/nvim-lspconfig'
-	use 'glepnir/lspsaga.nvim'
 	-- autocomplete
 	use 'hrsh7th/nvim-cmp' -- completion 
 	use 'hrsh7th/cmp-nvim-lsp' -- nvim lsp completion
@@ -28,10 +27,8 @@ packer.startup( function( use )
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	-- autopair
 	use 'windwp/nvim-autopairs'
-	-- telescope
+	-- plugin support
 	use 'nvim-lua/plenary.nvim'
-	use 'nvim-telescope/telescope.nvim'
-	use 'nvim-telescope/telescope-file-browser.nvim'
 	-- icons
 	use 'kyazdani42/nvim-web-devicons'
 	-- colorizer
@@ -42,7 +39,7 @@ packer.startup( function( use )
 	use 'lukas-reineke/indent-blankline.nvim'
 	-- Lualine
 	use 'nvim-lualine/lualine.nvim'
-	-- beacon nvim 
+	-- Cursor flash
 	use 'rainbowhxch/beacon.nvim'
 	-- markdown 
 	use({
@@ -54,12 +51,10 @@ end )
 require( 'pluginConfs.catppuccinRC' )
 require( 'pluginConfs.lspconfigRC' )
 require( 'pluginConfs.masonRC' )
-require( 'pluginConfs.lspExtendedRC')
 require( 'pluginConfs.lspkindRC' )
 require( 'pluginConfs.nvimCmpRC' )
 require( 'pluginConfs.autopairsRC' )
 require( 'pluginConfs.treesitterRC' )
-require( 'pluginConfs.telescopeRC')
 require( 'pluginConfs.colorizerRC' )
 require( 'pluginConfs.gitsignsRC')
 require( 'pluginConfs.lualineRC' )

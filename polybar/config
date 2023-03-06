@@ -215,7 +215,29 @@ ramp-signal-2 = "2"
 ramp-signal-3 = "3"
 ramp-signal-4 = "4"
 
+[module/alsa]
+type = internal/alsa
 
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default 
+
+master-mixer = Master 
+
+mapped = true
+
+interval = 1 
+
+format-volume-prefix = 音
+format-volume-prefix-padding    = 1
+format-volume-prefix-foreground = ${colors.color0}
+format-volume-prefix-background = ${colors.color2}
+
+format-volume = <label-volume>
+label-volume = %percentage%
+label-volume-padding = 1 
+label-volume-foreground = ${colors.color7}
+label-volume-background = ${colors.color0}
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -242,7 +264,6 @@ label-muted = 静
 label-muted-padding = 1 
 label-muted-foreground = ${colors.color0}
 label-muted-background = ${colors.color7}
-
 
 
 [settings]

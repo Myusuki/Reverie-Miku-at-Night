@@ -5,8 +5,8 @@ follow = keyboard
 # geometry of the notif 
 width = (0,900)
 height = 900
-origin = top-center
-offset = 10x40
+origin = top-right
+offset = 80x40
 
 # show number of msgs that are hidden due to geometry
 indicate_hidden = yes
