@@ -46,6 +46,8 @@ packer.startup( function( use )
 		"iamcco/markdown-preview.nvim",
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
+	-- file tree explorer or file manager
+	use { 'luukvbaal/nnn.nvim', config = function() require( "nnn" ).setup() end }
 end )
 
 require( 'pluginConfs.catppuccinRC' )
@@ -59,3 +61,4 @@ require( 'pluginConfs.colorizerRC' )
 require( 'pluginConfs.gitsignsRC')
 require( 'pluginConfs.lualineRC' )
 require( 'pluginConfs.beaconRC' )
+require( 'pluginConfs.nnnRC')
