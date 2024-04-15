@@ -11,8 +11,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-local status, packer = pcall( require, 'packer' )
-if ( not status ) then
+local status, packer = pcall( require, 'packer' ) if ( not status ) then
 	print( "Packer Is Not Installed" )
 	return
 end
@@ -59,6 +58,11 @@ packer.startup( function( use )
 	})
 	-- file tree explorer or file manager
 	use { 'luukvbaal/nnn.nvim', config = function() require( "nnn" ).setup() end }
+	-- EWW support 
+	use 'gpanders/nvim-parinfer'
+	use 'elkowar/yuck.vim'
+	-- comment
+	use 'numToStr/Comment.nvim'
 end )
 
 require( 'PluginConfs.catppuccinRC' )
@@ -73,3 +77,4 @@ require( 'PluginConfs.gitsignsRC')
 require( 'PluginConfs.lualineRC' )
 require( 'PluginConfs.beaconRC' )
 require( 'PluginConfs.nnnRC')
+require( 'PluginConfs.commentRc')

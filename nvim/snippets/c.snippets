@@ -1,48 +1,55 @@
 # Preprocessor
 ## Include
 ### Local Root Directory
-snippet unc
+snippet unc local file inclusion
 	#include "${1}"
 
 ### Standard Directory
-snippet inc 
+snippet inc external file inclusion
 	#include <${1}>
 
 # Main Function 
-snippet main
-	int main(${0})
+snippet main main function
+	int main(${1})
 	{
-		${1}
+		${2:code here}
+		return 0;
+	}
+
+snippet mainc main function with CLI argument input
+	int main( int argc, char *argv[] )
+	{
+		${1:code here}
 		return 0;
 	}
 
 # Control Flow Statements
 ## If 
-snippet if
-	if(${0})
-		${1}
+snippet if if statement
+	if(${1:expression})
+		${2:code here}
 
 ## Else If
-snippet elif
-	else if(${0})
-		${1}
+snippet elif else if statement
+	else if(${1:expression})
+		${2:code here}
 
 ## Else
-snippet else
+snippet else else statement
 	else
-		${0}
+		${1:code here}
 
 # Loop Statements
 ## while
-snippet while
-	while(${0})
+snippet while while loop
+	while(${1:expression})
 	{
-		${1}
+		${2:code here}
 	}
 
 ## for 
-snippet for
-	for(${0})
+snippet for for loop
+	for(${1})
 	{
-		${1}
+		${2}
 	}

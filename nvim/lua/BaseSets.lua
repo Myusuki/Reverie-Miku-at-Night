@@ -23,10 +23,10 @@ vim.opt.wildoptions = 'pum'
 -- inccommand
 vim.opt.inccommand = 'split'
 -- indentation 
-vim.opt.autoindent = true
+vim.opt.autoindent = false
 vim.opt.breakindent = true
-vim.bo.expandtab = false
-vim.opt.smartindent = true
+vim.bo.expandtab = true
+vim.opt.smartindent = false
 vim.bo.shiftwidth = 2
 vim.bo.tabstop = 2
 -- laststatus 
